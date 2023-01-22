@@ -1,7 +1,7 @@
 const input = document.querySelector("#font-size-control");
 const text = document.querySelector("#text");
 
-input.addEventListener("change", res);
+input.addEventListener("input", res);
 
 function res() {
   const inputValue = input.value;

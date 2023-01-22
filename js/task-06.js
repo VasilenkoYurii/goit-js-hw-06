@@ -8,6 +8,7 @@ function inInputBlur(event) {
   console.log(inputValue);
 
   if (inputValue !== dataLength) {
+    input.classList.remove("valid");
     return input.classList.add("invalid");
   }
   if (inputValue === dataLength) {

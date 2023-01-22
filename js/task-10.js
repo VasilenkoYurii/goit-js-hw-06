@@ -1,5 +1,7 @@
 function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
 }
 
 const refs = {
@@ -14,7 +16,7 @@ function createBoxes(amount) {
     const elem = document.createElement("div");
 
     elem.style.width = `${30 + 10 * i}px`;
-    elem.style.height = `${30}px`;
+    elem.style.height = `${30 + 10 * i}px`;
     elem.style.backgroundColor = getRandomHexColor();
 
     refs.boxesEl.append(elem);
@@ -29,5 +31,6 @@ refs.createEl.addEventListener("click", function () {
 });
 
 refs.destroyEl.addEventListener("click", function () {
+  refs.amountEl.value = "";
   refs.boxesEl.innerHTML = "";
 });
